@@ -220,12 +220,23 @@
         // ==========================================================================================
         // Esse codigo foi inserido para se adaptar ao projeto angular
         // var root = m[2] ? requirePath[p[1]?parseInt(p[1]):0] : requirePath[m[1]?parseInt(m[1]):0];
-        var root = gramLogic.gethost()
+        var root = requirePath[0].substr(0,requirePath[0].indexOf('#'))
         // ==========================================================================================
         parser.href = (m[2]?root+p[2]+m[2]+'/':root)+m[3]+(m[4]?m[4]:'index');
         var uri = parser.href+(m[5]?m[5]:'.js');
 
 
+
+            // Esse codigo foi inserido para se adaptar ao projeto angular no ambiente de desenvolvimento
+
+            // if(gramLogic.getAmbiente()=='dev'){
+            //     var uridev =gramLogic.gethost()+(uri.substr(uri.indexOf('/assets'),uri.length));
+            //     var id = (m[1]?m[1]+":":"0:")+parser.href.substr(root.length);
+            //     return {'id':id,'uri':uridev};
+            // }
+    
+            
+    
         
         if (uri.substr(0,root.length) != root)
             throw new Error("Honey: relative identifier outside of module root");

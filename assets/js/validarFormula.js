@@ -1,6 +1,5 @@
 var gramLogic = (function() {
     // var ambiente ='dev'
-    var host='http://localhost:4200/';
     return {
       validar: function(formula,prod='false') {
 
@@ -11,11 +10,6 @@ var gramLogic = (function() {
               xml: null
           }
       }
-         if(prod=='true'){
-            host='https://arvore-refutacao.thelogiclive.com/';
-            // host='http://127.0.0.1:5500/'
-         }
-
 
 
       var antlr4 = require('assets/js/antlr4/index');
@@ -115,9 +109,6 @@ var gramLogic = (function() {
     }
       
       },
-      gethost: function() {
-        return  host;
-      }
       
     }
 
